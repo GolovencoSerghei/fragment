@@ -17,9 +17,9 @@ class Fragment
         self::$client = new Client($secret, $options);
     }
 
-    public static function event(string $secret="", string $string="")
+    public static function event(string $secret="", string $string=""): string
     {
-        echo 'event';
+        return 'event';
     }
 
     /**
