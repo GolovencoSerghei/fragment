@@ -8,5 +8,6 @@
             "Fragment": "lib/"
         }
     },
-    "require": {}
+    "require": {},
+    "minimum-stability": "stable"
 }
