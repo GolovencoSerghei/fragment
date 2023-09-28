@@ -2,36 +2,39 @@
 
 namespace Fragment;
 
-use Fragment\Consumer\Client;
+use Exception;
+use Fragment\Consumer\Carrier;
 
 class Fragment
 {
 
     /**
-     * @var Client
+     * @var Carrier
      */
-    private static $client;
+    private static $client = null;
 
     public static function init(string $secret, array $options = []): void
     {
-        self::$client = new Client($secret, $options);
-    }
-
-    public static function event(string $secret="", string $string=""): string
-    {
-        return 'event';
+        self::$client = new Carrier($secret, $options);
     }
 
     /**
-     * @throws FragmentException
+     * @throws Exception
+     */
+    public static function event(array $message): bool
+    {
+        self::checkClient();
+        return self::$client->track($message);
+    }
+
+    /**
+     * @throws Exception
      */
     private static function checkClient(): void
     {
         if (self::$client !== null) {
             return;
         }
-
-        throw new FragmentException('Segment::init() must be called before any other tracking method.');
+        throw new Exception('Fragment::init() must be called before any other tracking method.');
     }
-
 }
