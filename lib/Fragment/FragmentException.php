@@ -1,6 +1,6 @@
 <?php
 
-namespace Fragment;
+namespace Fragment\Fragment;
 
 class FragmentException extends \Exception
 {

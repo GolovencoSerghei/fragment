@@ -1,14 +1,17 @@
 {
     "name": "golovencoserghei/fragment",
+    "description": "aa",
     "type": "library",
-    "version": "1.0.1",
+    "authors": [
+        {
+            "name": "se"
+        }
+    ],
     "autoload": {
-        "psr-4": {
-            "Fragment\\": "lib/"
+        "psr-0": {
+            "Fragment": "lib/"
         }
     },
-    "require": {
-        "php": "7.2.*",
-        "guzzlehttp/guzzle": "7.8.0"
-    }
+    "minimum-stability": "beta",
+    "require": {}
 }

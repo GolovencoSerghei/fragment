@@ -2,7 +2,7 @@
 
 namespace Fragment\Consumer;
 
-use GuzzleHttp\Exception\GuzzleException;
+use Fragment\Consumer\Config;
 
 class Client
 {
@@ -12,7 +12,7 @@ class Client
      */
     private function request(string $method, $url = '', array $options = [], $contentType = false): \Psr\Http\Message\ResponseInterface
     {
-        $client = new \GuzzleHttp\Client();
+        $client = new Client();
         $headers = [
             'x-auth-user-token' => Config::$mainToken
         ];
