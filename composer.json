@@ -1,17 +1,12 @@
 {
     "name": "golovencoserghei/fragment",
-    "description": "aa",
+    "description": "",
+    "version": "1.0.0",
     "type": "library",
-    "authors": [
-        {
-            "name": "se"
-        }
-    ],
     "autoload": {
         "psr-0": {
             "Fragment": "lib/"
         }
     },
-    "minimum-stability": "beta",
     "require": {}
 }
